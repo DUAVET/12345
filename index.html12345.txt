@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Form</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+    <h1 class="text-center">School Data Collection</h1>
+    
+    <h2>Registered Students</h2>
+    <form id="school-form">
+        <div class="form-group">
+            <label for="class">Class</label>
+            <select class="form-control" id="class" required>
+                <option value="">Select Class</option>
+                <option value="X1">X1</option>
+                <option value="X2">X2</option>
+                <option value="X3">X3</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="boysRegistered">Boys/Men</label>
+            <input type="number" class="form-control" id="boysRegistered" required>
+        </div>
+        <div class="form-group">
+            <label for="girlsRegistered">Girls/Women</label>
+            <input type="number" class="form-control" id="girlsRegistered" required>
+        </div>
+        <button type="button" class="btn btn-primary" onclick="calculateTotal()">Calculate Total</button>
+    </form>
+</div>
+
+<script>
+    function calculateTotal() {
+        const boys = parseInt(document.getElementById('boysRegistered').value) || 0;
+        const girls = parseInt(document.getElementById('girlsRegistered').value) || 0;
+        alert('Total Registered: ' + (boys + girls));
+    }
+</script>
+
+</body>
+</html>
